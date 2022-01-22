@@ -4,4 +4,3 @@ matplotlib
 ipywidgets
 voila
 voila-material
-bgplot
