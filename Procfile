@@ -1,0 +1,1 @@
+web: gunicorn ICA2:server
