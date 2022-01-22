@@ -40,8 +40,8 @@ app.layout = html.Div(children=[
 
 
 
-confirmed_df = pd.read_csv(os.path.join(os.path.dirname(__file__), "raw_data_files\\confirmed_regions.csv"))
-deaths_df = pd.read_csv(os.path.join(os.path.dirname(__file__), "raw_data_files\\deaths_regions.csv"))
+confirmed_df = pd.read_csv(os.path.join(os.path.dirname(__file__), "raw_data_files/confirmed_regions.csv"))
+deaths_df = pd.read_csv(os.path.join(os.path.dirname(__file__), "raw_data_files/deaths_regions.csv"))
 
 confirmed_df.set_index(confirmed_df['Country/Region'],inplace=True)
 deaths_df.set_index(deaths_df['Country/Region'],inplace=True)
