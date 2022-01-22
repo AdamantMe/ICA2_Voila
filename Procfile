@@ -1,1 +1,1 @@
-web: voila --port=$PORT --no-browser ICA2.ipynb
+web: voila --port=process.env.PORT --no-browser ICA2.ipynb
