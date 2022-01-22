@@ -1,1 +1,1 @@
-web: gunicorn ICA2:server
+web: gunicorn --enable_nbextensions=True ICA2:server
