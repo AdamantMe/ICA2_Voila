@@ -1,1 +1,1 @@
-web: gunicorn ICA2:server --port=$PORT --no-browser --template=material --enable_nbextensions=True
+web: gunicorn ICA2:create_app\(\) -w 3 -b 0.0.0.0:$PORT -k gevent --max-requests 250
