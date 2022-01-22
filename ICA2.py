@@ -1,24 +1,28 @@
-# Voila Web App
+import os
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
 
-## A website built out of a Jupyter notebook using Voila
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-import numpy as np
-import matplotlib.pyplot as plt
-from ipywidgets import interactive
-# %matplotlib inline
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-def plot_func(a, f):
-    plt.figure(2)
-    x = np.linspace(0, 2*np.pi, num=1000)
-    y = a*np.sin(1/f*x)
-    plt.plot(x,y)
-    plt.ylim(-1.1, 1.1)
-    plt.title('a sin(f)')
-    plt.show()
+server = app.server
 
-interactive_plot = interactive(plot_func, a=(-1,0,0.1), f=(0.1, 1))
-output = interactive_plot.children[-1]
-output.layout.height = '300px'
-interactive_plot
+app.layout = html.Div([
+    html.H2('Hello World'),
+    dcc.Dropdown(
+        id='dropdown',
+        options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
+        value='LA'
+    ),
+    html.Div(id='display-value')
+])
 
-print("All hail the amount of nerves it took me to deploy this")
+@app.callback(dash.dependencies.Output('display-value', 'children'),
+                [dash.dependencies.Input('dropdown', 'value')])
+def display_value(value):
+    return 'You have selected "{}"'.format(value)
+
+if __name__ == '__main__':
+    app.run_server(debug=True)

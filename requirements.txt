@@ -1,6 +1,6 @@
+os
 pandas
 numpy
-matplotlib
-ipywidgets
-voila
-voila-material
+dash
+dash_core_components
+dash_html_components

@@ -1,1 +1,1 @@
-web: voila --port=$PORT --Voila.ip=0.0.0.0 --no-browser --template=material --enable_nbextensions=True ICA2.ipynb
+web: gunicorn ICA2:server
