@@ -20,3 +20,5 @@ interactive_plot = interactive(plot_func, a=(-1,0,0.1), f=(0.1, 1))
 output = interactive_plot.children[-1]
 output.layout.height = '300px'
 interactive_plot
+
+print("All hail the amount of nerves it took me to deploy this")
