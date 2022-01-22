@@ -1,7 +1,10 @@
-import os
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import pandas as pd
+
+covid19 = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/01-21-2022.csv")
+covid19.head()
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
