@@ -1,0 +1,13 @@
+body {
+    background-color: #2B2A2A;
+}
+label { color: #E6E6E6; }
+H1 {
+    color: #E6E6E6;
+    margin-left: auto;
+    margin-right: auto;    
+    text-align: center;
+}
+title {
+    color: #E6E6E6
+}
