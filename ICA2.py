@@ -74,7 +74,7 @@ new_col_Latitude = [34.0479, 53.0000, 10, 8.7832, -10.7359]
 confirmed_continents.insert(loc=0, column='Long', value=new_col_Longtitude)
 confirmed_continents.insert(loc=0, column='Lat', value=new_col_Latitude)
 
-app = dash.Dash()
+app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div(children=[
