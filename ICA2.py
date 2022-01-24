@@ -75,6 +75,7 @@ confirmed_continents.insert(loc=0, column='Long', value=new_col_Longtitude)
 confirmed_continents.insert(loc=0, column='Lat', value=new_col_Latitude)
 
 app = dash.Dash()
+server = app.server
 
 app.layout = html.Div(children=[
     html.H1(children='Pandemic Data Visualisation'),
@@ -129,30 +130,6 @@ app.layout = html.Div(children=[
         }
     ),
 ], style={'vertical-align': 'center'})
-
-# @app.callback(
-#     Output(component_id='graph_wind_rose', component_property='figure'),
-#     [Input(component_id='radio_data_shown', component_property='value')])
-# def update_bar(radio_choice):
-    
-#     sorted_combined_df=combined_df.loc[:,["Confirmed","Deaths"]].sort_values(radio_choice,ascending=False)
-#     sorted_combined_df['Country']=sorted_combined_df.index
-
-#     figure = px.bar(
-#     sorted_combined_df.head(10),
-#     x = "Country",
-#     y = radio_choice,
-#     title= "Top 10 worst affected Countries", # the axis names
-#     color = radio_choice, 
-#     )
-
-#     figure.update_layout(paper_bgcolor = "rgb(43,42,42)")
-
-#     figure.update_xaxes(title_font=dict(size=18, family='Courier', color='#E6E6E6'), tickfont=dict(family='arial', color='#E6E6E6', size=14), ticks="outside", tickwidth=2, ticklen=10)
-#     figure.update_yaxes(title_font=dict(size=18, family='Courier', color='#E6E6E6'), tickfont=dict(family='arial', color='#E6E6E6', size=14))   
-#     figure.update_layout(title_font_color="white")
-
-#     return figure
 
 @app.callback(
     Output(component_id='graph_confirmed_death', component_property='figure'),
